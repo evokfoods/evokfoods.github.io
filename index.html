@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction | Freeze Dried Pet Treats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Construction | MLEM EvokFoods</title>
 
   <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -22,30 +16,56 @@
     }
 
     body{
-      font-family:'Poppins',sans-serif;
+      font-family:'Poppins', sans-serif;
       min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
+      overflow:hidden;
+      position:relative;
       padding:20px;
-      background:
-        linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
-        url('https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
-      color:#333;
+      color:#fff;
+      background:#f5eee6;
     }
 
-    .container{
+    /* Blurred Small Beige Dog Background */
+    body::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(70,50,35,0.30), rgba(70,50,35,0.30)),
+        url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      filter:blur(10px) brightness(0.82);
+      transform:scale(1.1);
+      z-index:-2;
+    }
+
+    /* Soft warm overlay */
+    body::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(255,248,240,0.12);
+      z-index:-1;
+    }
+
+    .card{
       width:100%;
       max-width:720px;
-      background:rgba(255,255,255,0.92);
-      border-radius:28px;
-      padding:50px 35px;
+      padding:55px 40px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.25);
+      box-shadow:0 12px 40px rgba(0,0,0,0.20);
       text-align:center;
-      box-shadow:0 15px 40px rgba(0,0,0,0.12);
-      backdrop-filter:blur(10px);
     }
 
-    .icon{
+     .icon{
       width:100px;
       height:100px;
       margin:0 auto 25px;
@@ -57,152 +77,151 @@
       font-size:48px;
       color:#ff7a00;
       box-shadow:0 8px 20px rgba(255,122,0,0.15);
-    }
-
+}
     h1{
-      font-size:2.8rem;
-      color:#ff7a00;
-      margin-bottom:18px;
+      font-size:3rem;
       font-weight:700;
+      margin-bottom:18px;
+      letter-spacing:0.5px;
     }
 
-    .subtitle{
-      font-size:1.1rem;
+    p{
+      font-size:1.08rem;
       line-height:1.9;
-      color:#555;
-      margin-bottom:35px;
+      color:#fafafa;
+      margin-bottom:38px;
+      font-weight:300;
     }
 
     .highlight{
-      color:#ff7a00;
+      color:#ffe1b5;
       font-weight:600;
     }
 
-    .social-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:16px;
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
-    .social-btn{
+    .btn{
       text-decoration:none;
-      color:#fff;
-      padding:16px;
-      border-radius:16px;
+      padding:15px 30px;
+      min-width:220px;
+      border-radius:50px;
       font-size:1rem;
       font-weight:600;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
       transition:all 0.3s ease;
-    }
-
-    .social-btn:hover{
-      transform:translateY(-4px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.15);
     }
 
     .shopee{
       background:#ee4d2d;
+      color:#fff;
+      box-shadow:0 6px 18px rgba(238,77,45,0.35);
+    }
+
+    .shopee:hover{
+      transform:translateY(-4px);
+      background:#d94323;
     }
 
     .lazada{
-      background:linear-gradient(135deg,#4a00e0,#8e2de2);
+      background:linear-gradient(90deg,#0f136d,#ff00a8);
+      color:#fff;
+      box-shadow:0 6px 18px rgba(255,0,168,0.30);
     }
 
-    .instagram{
-      background:linear-gradient(
-        45deg,
-        #f58529,
-        #feda77,
-        #dd2a7b,
-        #8134af,
-        #515bd4
-      );
-    }
-
-    .tiktok{
-      background:#000;
+    .lazada:hover{
+      transform:translateY(-4px);
+      opacity:0.94;
     }
 
     footer{
       margin-top:35px;
       font-size:0.9rem;
-      color:#888;
+      color:#f2f2f2;
+      font-weight:300;
     }
 
-    @media (max-width: 640px){
+    /* Tablet */
+    @media (max-width:768px){
 
-      .container{
-        padding:40px 22px;
+      .card{
+        padding:45px 28px;
       }
 
       h1{
-        font-size:2rem;
+        font-size:2.3rem;
       }
 
-      .subtitle{
+      p{
         font-size:1rem;
       }
+    }
 
-      .social-grid{
-        grid-template-columns:1fr;
+    /* Mobile */
+    @media (max-width:480px){
+
+      .card{
+        padding:35px 22px;
       }
 
-      .social-btn{
+      h1{
+        font-size:1.8rem;
+      }
+
+      .dog-icon{
+        font-size:52px;
+      }
+
+      .btn{
         width:100%;
       }
+
+      p{
+        line-height:1.8;
+      }
     }
+
   </style>
 </head>
+
 <body>
 
-  <div class="container">
+  <div class="card">
 
-    <div class="icon">
+    
+<div class="icon">
       🐾
     </div>
 
     <h1>Website Under Construction</h1>
 
-    <p class="subtitle">
-      We’re preparing something pawsome for you! 🐶🐱<br><br>
-
+    <p>
+      We’re currently building something
+      <span class="highlight">cute & pawsome!!</span>
+      <br><br>
       In the meantime, please find us on
-      <span class="highlight">Shopee</span>,
-      <span class="highlight">Lazada</span>,
-      <span class="highlight">Instagram</span>, or
-      <span class="highlight">TikTok</span>
-      for your freeze dried treats & toppers purchase.
+      <span class="highlight">Shopee</span> or
+      <span class="highlight">Lazada</span>
+      for your freeze-dried treats & toppers purchases.
     </p>
 
-    <div class="social-grid">
+    <div class="buttons">
 
-      <a href="https://shopee.sg/" target="_blank" class="social-btn shopee">
-        <i class="fa-solid fa-bag-shopping"></i>
-        Shopee
+      <a href="https://shopee.sg/mlem21" target="_blank" class="btn shopee">
+        Visit Our Shopee Store
       </a>
 
-      <a href="https://www.lazada.sg/" target="_blank" class="social-btn lazada">
-        <i class="fa-solid fa-store"></i>
-        Lazada
-      </a>
-
-      <a href="https://instagram.com/" target="_blank" class="social-btn instagram">
-        <i class="fa-brands fa-instagram"></i>
-        Instagram
-      </a>
-
-      <a href="https://tiktok.com/" target="_blank" class="social-btn tiktok">
-        <i class="fa-brands fa-tiktok"></i>
-        TikTok
+      <a href="https://www.lazada.sg/shop/mlem-evok-foods" target="_blank" class="btn lazada">
+        Visit Our Lazada Store
       </a>
 
     </div>
 
     <footer>
-      © 2026 MLEM @ eVok Foods 
+      © 2026 MLEM @ eVokFoods. All Rights Reserved.
     </footer>
 
   </div>
